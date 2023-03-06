@@ -26,14 +26,13 @@ const authResolvers = {
         username: user.username,
         id: user._id,
       }
-      console.log(secret)
       const token = jwt.sign(
         userForToken, 
         secret,
         { expiresIn: 60*60 }
       )
 
-      return token
+      return {user, token}
     },
 
     register: async(_, {displayName, username, email, chef, password}, context) => {
@@ -60,7 +59,7 @@ const authResolvers = {
         { expiresIn: 60*60 }
       )
 
-      return token          
+      return {user: savedUser, token}        
     }
   }
 }

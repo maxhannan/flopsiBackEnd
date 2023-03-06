@@ -7,6 +7,7 @@ import resolvers from './gql/resolvers/index.js'
 import typeDefs from './gql/TypeDefs.js';
 
 
+
 mongoose.connect(process.env.MONGO_DB_URI)
   .then(result => {
     console.log('connected to MongoDB')
@@ -23,6 +24,7 @@ const server = new ApolloServer({
 const { url } = await startStandaloneServer(server, {
   listen: { port: 4000 },
   context: async({ req }) => {
+    console.log(req)
     // get the user token from the headers
     const token = req.headers.authorization || '';
 

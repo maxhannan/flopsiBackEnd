@@ -6,7 +6,6 @@ import { GraphQLError } from 'graphql'
 const getTokenFrom = token => {
   console.log(token)
   if (token && token.startsWith('Bearer ')) {
-    console.log('inside')
     return token.replace('Bearer ', '')
   }
   return null

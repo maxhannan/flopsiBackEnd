@@ -22,6 +22,10 @@ type User {
     email: String!
     chef: Boolean!
 }
+type UserToken {
+  token: String!
+  user: User!
+}
 type Query {
   getCurrentUser: User!
 }
@@ -29,14 +33,14 @@ type Mutation {
   logIn(
     username: String!
     password: String! 
-  ): String!
+  ): UserToken!
   register(
     displayName: String!
     username: String!
     email: String!
     chef: Boolean!
     password: String!
-  ): String!
+  ): UserToken!
 }
 `
 export default typeDefs
