@@ -12,7 +12,6 @@ const getTokenFrom = token => {
   return null
 }
 
-
  const userExtractor = async(token) => {
   const splitToken = await getTokenFrom(token)
   const secret =  process.env.SECRET
