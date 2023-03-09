@@ -42,5 +42,5 @@ type Mutation {
     password: String!
   ): UserToken!
 }
-`
-export default typeDefs
+`;
+export default typeDefs;

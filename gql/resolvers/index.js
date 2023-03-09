@@ -1,12 +1,11 @@
-import authResolvers from './authResolvers.js'
+import authResolvers from "./authResolvers.js";
 const resolvers = {
   Query: {
-    ...authResolvers.Query
+    ...authResolvers.Query,
   },
   Mutation: {
-    ...authResolvers.Mutation
-    
-  }
-}
+    ...authResolvers.Mutation,
+  },
+};
 
-export default resolvers
+export default resolvers;

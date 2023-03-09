@@ -24,10 +24,9 @@ const UserSchema = new Schema({
   recipes: [
     {
       type: Schema.Types.ObjectId,
-      ref: 'Recipe'
-    }
-  ]
- 
+      ref: "Recipe",
+    },
+  ],
 });
 
-export default model('User', UserSchema);
+export default model("User", UserSchema);

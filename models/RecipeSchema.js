@@ -2,7 +2,7 @@ import { Schema, model } from "mongoose";
 
 const recipeSchema = new Schema({
   recipeName: String,
-  recipeCategory: String, 
+  recipeCategory: String,
   ingredients: [
     {
       ingredientName: String,
@@ -11,22 +11,22 @@ const recipeSchema = new Schema({
       hasComponent: Boolean,
       componentId: {
         type: Schema.Types.ObjectId,
-        ref: 'Recipe'
-      }
-    }
+        ref: "Recipe",
+      },
+    },
   ],
   instructions: [String],
   isComponent: Boolean,
   associatedRecipes: [
     {
       type: Schema.Types.ObjectId,
-      ref: 'Recipe'
-    }
+      ref: "Recipe",
+    },
   ],
   creator: {
     type: Schema.Types.ObjectId,
-    ref: 'User'
-  }
-})
+    ref: "User",
+  },
+});
 
-export default model('Recipe', recipeSchema)
+export default model("Recipe", recipeSchema);
